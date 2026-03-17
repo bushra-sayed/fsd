@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Filter</title>
+</head>
+<body>
+
+<h2>Check Console for Output</h2>
+
+<script>
+    const products = [
+        { id: 1, name: "Laptop", price: 50000 },
+        { id: 2, name: "Phone", price: 20000 },
+        { id: 3, name: "Headphones", price: 3000 },
+        { id: 4, name: "Keyboard", price: 1500 }
+    ];
+
+    console.log("All Products:");
+    products.forEach(product => {
+        console.log(product.name + " - ₹" + product.price);
+    });
+
+    let minPrice = parseInt(prompt("Enter minimum price:"));
+
+    function filterByMinPrice(price) {
+        const filtered = products.filter(product => product.price >= price);
+        
+        console.log("Filtered Products (Price >= " + price + "):");
+        
+        if (filtered.length === 0) {
+            console.log("No products found.");
+        } else {
+            filtered.forEach(product => {
+                console.log(product.name + " - ₹" + product.price);
+            });
+        }
+    }
+
+    filterByMinPrice(minPrice);
+
+</script>
+
+</body>
+</html>
